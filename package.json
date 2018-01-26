@@ -6,7 +6,8 @@
     "start": "npm-run-all --parallel open:src lint:watch",
     "open:src": "node tools/srcServer.js",
     "lint": "node_modules/.bin/esw src",
-    "lint:watch": "npm run lint -- --watch"
+    "lint:watch": "npm run lint -- --watch",
+    "build": "webpack --config webpack.config.js"
   },
   "author": "IAH",
   "license": "MIT",
