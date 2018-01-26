@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {loadMovies, searchMovies} from '../../actions/movieActions';
 import MovieList from './MovieList';
-import Search from '../common/Search'
+import Search from '../common/Search';
 
 class MoviesPage extends React.Component {
   render() {
@@ -23,12 +23,12 @@ MoviesPage.propTypes = {
 
 const mapStateToProps = (state) => {
   return {};
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
       searchMovies: (query) => dispatch(searchMovies(query))
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoviesPage);

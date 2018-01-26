@@ -12,7 +12,7 @@ class MovieDetailsPage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    var nextId = nextProps.match.params.id;
+    let nextId = nextProps.match.params.id;
     if (nextId !== this.props.match.params.id) {
         this.props.loadMovieDetails(nextId);
     }
@@ -20,18 +20,18 @@ class MovieDetailsPage extends React.Component {
 
   render() {
     if (this.props.hasErrored) {
-        return <ErrorMessage />
+        return <ErrorMessage />;
     }
     else if (this.props.isLoading) {
-      return <Loading />
+      return <Loading />;
     }
 
     let media = null;
     if(this.props.movie.video) {
       media =
-        <div className="embed-responsive embed-responsive-16by9">
-           <iframe className="embed-responsive-item" type="text/html" src={this.props.movie.video} frameBorder="0"></iframe>
-        </div>;
+        (<div className="embed-responsive embed-responsive-16by9">
+           <iframe className="embed-responsive-item" type="text/html" src={this.props.movie.video} frameBorder="0" />
+        </div>);
     }
     else if(this.props.movie.poster) {
       media = <img className="thumbnail-image ma-thumbnail-image" src={this.props.movie.poster} alt={this.props.movie.title} />;
@@ -52,7 +52,14 @@ class MovieDetailsPage extends React.Component {
 
 MovieDetailsPage.propTypes = {
   movie: PropTypes.object.isRequired,
-  loadMovieDetails: PropTypes.func.isRequired
+  loadMovieDetails: PropTypes.func.isRequired,
+  hasErrored: PropTypes.boolean,
+  isLoading: PropTypes.boolean,
+  match: React.propTypes.shape({
+    params: React.propTypes.shape({
+      id: PropTypes.number.isRequired
+    }).isRequired
+  }).isRequired
 };
 
 const mapStateToProps = (state) => {
@@ -61,12 +68,12 @@ const mapStateToProps = (state) => {
       hasErrored: state.loadMovieDetailsError,
       isLoading: state.movieDetailsAreLoading
   };
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
       loadMovieDetails: (id) => dispatch(loadMovieDetails(id))
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieDetailsPage);

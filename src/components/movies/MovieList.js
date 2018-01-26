@@ -13,10 +13,10 @@ class MovieList extends React.Component {
 
   render() {
     if (this.props.hasErrored) {
-        return <ErrorMessage />
+        return <ErrorMessage />;
     }
     else if (this.props.isLoading) {
-      return <Loading />
+      return <Loading />;
     }
     return (
       <div className="container-fluid main-content">
@@ -24,11 +24,13 @@ class MovieList extends React.Component {
       </div>
     );
   }
-};
+}
 
 MovieList.propTypes = {
   movies: PropTypes.array.isRequired,
-  loadMovies: PropTypes.func.isRequired
+  loadMovies: PropTypes.func.isRequired,
+  hasErrored: PropTypes.boolean,
+  isLoading: PropTypes.boolean
 };
 
 const mapStateToProps = (state) => {
@@ -37,12 +39,12 @@ const mapStateToProps = (state) => {
       hasErrored: state.loadMoviesError,
       isLoading: state.moviesAreLoading
   };
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
       loadMovies: () => dispatch(loadMovies())
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieList);

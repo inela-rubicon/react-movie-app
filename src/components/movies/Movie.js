@@ -6,7 +6,7 @@ import MissingImage from '../common/MissingImage';
 const Movie = (({movie}) => {
   let poster = null;
   if(movie.poster) {
-    poster = <img className="thumbnail-image ma-thumbnail-image" src={movie.poster} alt={movie.title} />
+    poster = <img className="thumbnail-image ma-thumbnail-image" src={movie.poster} alt={movie.title} />;
   }
   else {
     poster = <MissingImage />;

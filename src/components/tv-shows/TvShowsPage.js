@@ -1,7 +1,7 @@
 import React from 'react';
 import NotImplemented from '../common/NotImplemented';
 
-const TvShowsPage = (({movie}) => {
+const TvShowsPage = (() => {
   return (
     <NotImplemented />
   );

@@ -7,7 +7,7 @@ export const loadMoviesError = (state = false, action) => {
         default:
             return state;
     }
-}
+};
 
 export const moviesAreLoading = (state = false, action) => {
     switch (action.type) {
@@ -16,7 +16,7 @@ export const moviesAreLoading = (state = false, action) => {
         default:
             return state;
     }
-}
+};
 
 export const movies = (state = [], action) => {
     switch (action.type) {
@@ -25,7 +25,7 @@ export const movies = (state = [], action) => {
         default:
             return state;
     }
-}
+};
 
 export const loadMovieDetailsError = (state = false, action) => {
     switch (action.type) {
@@ -34,7 +34,7 @@ export const loadMovieDetailsError = (state = false, action) => {
         default:
             return state;
     }
-}
+};
 
 export const movieDetailsAreLoading = (state = false, action) => {
     switch (action.type) {
@@ -43,7 +43,7 @@ export const movieDetailsAreLoading = (state = false, action) => {
         default:
             return state;
     }
-}
+};
 
 export const movie = (state = {
     id: null,
@@ -57,4 +57,4 @@ export const movie = (state = {
         default:
             return state;
     }
-}
+};

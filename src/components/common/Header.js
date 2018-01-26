@@ -9,9 +9,9 @@ const Header = () => {
                 <nav className="navbar navbar-default ma-navbar" role="navigation">
                     <div className="navbar-header">
                         <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-items" aria-expanded="false">
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
+                            <span className="icon-bar" />
+                            <span className="icon-bar" />
+                            <span className="icon-bar" />
                         </button>
                     </div>
                     <div className="collapse navbar-collapse" id="menu-items">

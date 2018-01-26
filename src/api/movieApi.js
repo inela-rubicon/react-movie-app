@@ -9,7 +9,7 @@ class MovieApi {
       overview: movie.overview,
       poster: movie.poster_path ? `${constants.img_base}${movie.poster_path}` : null,
       video: movie.videos && movie.videos.results.length > 0 ? `${constants.video_base}${movie.videos.results[0].key}` : null
-    }
+    };
     return mapped;
   }
 
@@ -36,7 +36,6 @@ class MovieApi {
   static getMovieDetails(id) {
     return axios.get(`${constants.base}/movie/${id}?api_key=${constants.key}&language=${constants.lang}&append_to_response=videos`)
        .then((response) => {
-         console.log(response);
          if(response.status === 200) {
            return this.mapMovie(response.data);
          }

@@ -1,9 +1,12 @@
 {
   "name": "movie-app",
   "version": "1.0.0",
-  "description": "React application for company website",
+  "description": "React movie app",
   "scripts": {
-    "start": "node tools/srcServer.js"
+    "start": "npm-run-all --parallel open:src lint:watch",
+    "open:src": "node tools/srcServer.js",
+    "lint": "node_modules/.bin/esw src",
+    "lint:watch": "npm run lint -- --watch"
   },
   "author": "IAH",
   "license": "MIT",

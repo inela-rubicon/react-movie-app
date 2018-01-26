@@ -6,7 +6,7 @@ import Header from './common/Header';
 import MoviesPage from './movies/MoviesPage';
 import MovieDetailsPage from './movies/MovieDetailsPage';
 import TvShowsPage from './tv-shows/TvShowsPage';
-import configureStore from '../store/configureStore'
+import configureStore from '../store/configureStore';
 import {loadMovies} from '../actions/movieActions';
 
 const store = configureStore();
@@ -19,7 +19,7 @@ class App extends React.Component {
           <div className="container-fluid">
             <Header />
             <Switch>
-              <Route exact={true} path="/movies" component={MoviesPage} />
+              <Route exact path="/movies" component={MoviesPage} />
               <Route path="/movies/:id" component={MovieDetailsPage} />
               <Route path="/tv-shows" component={TvShowsPage} />
               <Redirect from="/" to="/movies" />
