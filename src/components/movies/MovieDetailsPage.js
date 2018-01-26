@@ -62,14 +62,6 @@ MovieDetailsPage.propTypes = {
   }).isRequired
 };
 
-// MovieDetailsPage.defaultProps = {
-//   match: {
-//     params: {
-//       id: ''
-//     },
-//   },
-// };
-
 const mapStateToProps = (state) => {
   return {
       movie: state.movie,
