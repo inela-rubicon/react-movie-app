@@ -55,12 +55,20 @@ MovieDetailsPage.propTypes = {
   loadMovieDetails: PropTypes.func.isRequired,
   hasErrored: PropTypes.boolean,
   isLoading: PropTypes.boolean,
-  match: React.propTypes.shape({
-    params: React.propTypes.shape({
+  match: PropTypes.shape({
+    params: PropTypes.shape({
       id: PropTypes.number.isRequired
     }).isRequired
   }).isRequired
 };
+
+// MovieDetailsPage.defaultProps = {
+//   match: {
+//     params: {
+//       id: ''
+//     },
+//   },
+// };
 
 const mapStateToProps = (state) => {
   return {
